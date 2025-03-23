@@ -50,33 +50,6 @@
   <script>
     document.getElementById("myInput").onkeydown = function(event) {
         event.preventDefault();
-    document.addEventListener("keydown", function(event) {
-    const key = event.key; // Получаем нажатую клавишу
-    const display = document.getElementById("display"); // Поле вывода
-
-    if (!display) return; // Проверяем, что элемент существует
-
-    // Разрешаем цифры (0-9) и операторы (+, -, *, /, .)
-    if (/[\d+\-*/.]/.test(key)) {
-        display.value += key;
-    } 
-    // Клавиша "Enter" — вычисляет результат
-    else if (key === "Enter") {
-        try {
-            display.value = eval(display.value); // Вычисление
-        } catch {
-            display.value = "Ошибка"; // Если ввод неверный
-        }
-    } 
-    // Клавиша "Backspace" — удаляет последний символ
-    else if (key === "Backspace") {
-        display.value = display.value.slice(0, -1);
-    } 
-    // Клавиша "Escape" — очищает дисплей
-    else if (key === "Escape") {
-        display.value = "";
-    }
-});
 
     };
 </script>
